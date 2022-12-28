@@ -1,22 +1,14 @@
 package com.example.propaintcontainerscreen.presentation.mypaint
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
-import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.propaintcontainerscreen.R
-import com.example.propaintcontainerscreen.data.PaintContainer
 import com.example.propaintcontainerscreen.databinding.FragmentMyPaintsBinding
-import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken
-import com.google.gson.Gson
-import java.io.IOException
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -53,7 +45,11 @@ class MyPaintsFragment : Fragment() {
 
 
         binding.ivArt.setOnClickListener {
-            Toast.makeText(requireContext(), "${myPaintsViewModel.getContainerData(requireContext())}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                "${myPaintsViewModel.getContainerData(requireContext())}",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
@@ -65,7 +61,7 @@ class MyPaintsFragment : Fragment() {
         binding.tvContainerName.text = containerData[0].name
         //price
 //        containerAmount = containerData[0].colors[0].amount
-        binding.tvContainerPrice.text =  resources.getString(
+        binding.tvContainerPrice.text = resources.getString(
             R.string.paint_amount,
             containerAmount
         )
@@ -103,28 +99,27 @@ class MyPaintsFragment : Fragment() {
             }
         }
 
-
-            binding.btnIncrement.setOnClickListener {
-                if (itemQuantity > 0) {
-                    itemQuantity += 1
-                    binding.etQuantity.text = itemQuantity.toString()
-                    binding.tvContainerPrice.text =  resources.getString(
-                        R.string.paint_amount,
-                        itemQuantity * containerAmount
-                    )
-                }
+        binding.btnIncrement.setOnClickListener {
+            if (itemQuantity > 0) {
+                itemQuantity += 1
+                binding.etQuantity.text = itemQuantity.toString()
+                binding.tvContainerPrice.text = resources.getString(
+                    R.string.paint_amount,
+                    itemQuantity * containerAmount
+                )
             }
+        }
 
-            binding.btnDecrement.setOnClickListener {
-                itemQuantity -= 1
-                if (itemQuantity > 0) {
-                    binding.etQuantity.text = itemQuantity.toString()
-                    binding.tvContainerPrice.text =  resources.getString(
-                        R.string.paint_amount,
-                        itemQuantity * containerAmount
-                    )
-                }
+        binding.btnDecrement.setOnClickListener {
+            itemQuantity -= 1
+            if (itemQuantity > 0) {
+                binding.etQuantity.text = itemQuantity.toString()
+                binding.tvContainerPrice.text = resources.getString(
+                    R.string.paint_amount,
+                    itemQuantity * containerAmount
+                )
             }
+        }
     }
 
     override fun onDestroyView() {

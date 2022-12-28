@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_20dp"
         android:layout_marginVertical="@dimen/_100dp"
-        android:paddingBottom="@dimen/_20dp"
         android:background="@drawable/my_paint_bg_rounded"
+        android:paddingBottom="@dimen/_20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -58,7 +58,7 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/tvContainerCode"
                 app:layout_constraintTop_toBottomOf="@id/tvContainerCode"
-                tools:text="₹ 55.00"/>
+                tools:text="₹ 55.00" />
 
             <TextView
                 android:id="@+id/tvContainerApproxLabel"
@@ -144,17 +144,19 @@
 
             <RadioButton
                 android:id="@+id/rbSheen1"
+                style="@style/SheenRadioButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@null"
                 android:button="@drawable/custom_sheen"
-                android:text="@string/matte"
                 android:checked="true"
+                android:text="@string/matte"
                 android:textColor="@color/atomic_tangerine" />
 
             <RadioButton
                 android:id="@+id/rbSheen2"
+                style="@style/SheenRadioButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -165,6 +167,7 @@
 
             <RadioButton
                 android:id="@+id/rbSheen3"
+                style="@style/SheenRadioButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -201,6 +204,7 @@
 
             <RadioButton
                 android:id="@+id/rbContainerSize1"
+                style="@style/SheenRadioButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -211,6 +215,7 @@
 
             <RadioButton
                 android:id="@+id/rbContainerSize2"
+                style="@style/SheenRadioButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -234,8 +239,7 @@
             android:textSize="@dimen/_16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tvContainerSizeLabel"
-            app:layout_constraintTop_toBottomOf="@+id/rgContainerSize"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/rgContainerSize" />
 
         <LinearLayout
             android:id="@+id/llQuantity"
