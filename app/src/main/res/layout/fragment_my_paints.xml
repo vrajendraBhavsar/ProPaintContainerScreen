@@ -148,11 +148,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@null"
-                android:button="@drawable/custom_sheen"
-                android:checked="true"
                 android:text="@string/matte"
-                android:textColor="@color/atomic_tangerine" />
+                android:textColor="@color/atomic_tangerine"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent" />
 
             <RadioButton
                 android:id="@+id/rbSheen2"
@@ -160,10 +162,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@null"
-                android:button="@drawable/custom_sheen"
                 android:text="@string/eggshell"
-                android:textColor="@color/atomic_tangerine" />
+                android:textColor="@color/atomic_tangerine"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent" />
 
             <RadioButton
                 android:id="@+id/rbSheen3"
@@ -171,10 +176,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@null"
-                android:button="@drawable/custom_sheen"
                 android:text="@string/satin"
-                android:textColor="@color/atomic_tangerine" />
+                android:textColor="@color/atomic_tangerine"
+                android:textStyle="bold" />
         </RadioGroup>
 
         <!--Container Size-->
@@ -208,10 +212,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@null"
-                android:button="@drawable/custom_sheen"
                 android:text="@string/_1_gallon"
-                android:textColor="@color/atomic_tangerine" />
+                android:textColor="@drawable/custom_text_selector"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="match_parent" />
 
             <RadioButton
                 android:id="@+id/rbContainerSize2"
@@ -219,10 +226,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@null"
-                android:button="@drawable/custom_sheen"
                 android:text="@string/_8_fl_oz"
-                android:textColor="@color/atomic_tangerine" />
+                android:textColor="@drawable/custom_text_selector"
+                android:textStyle="bold" />
 
         </RadioGroup>
 
