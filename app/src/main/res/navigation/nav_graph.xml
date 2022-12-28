@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/StarterFragment">
+
+    <fragment
+        android:id="@+id/MyPaintsFragment"
+        android:name="com.example.propaintcontainerscreen.presentation.mypaint.MyPaintsFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_my_paints">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/StarterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/StarterFragment"
+        android:name="com.example.propaintcontainerscreen.presentation.starter.StarterFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_starter">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/MyPaintsFragment" />
+    </fragment>
+</navigation>

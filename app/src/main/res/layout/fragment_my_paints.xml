@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.mypaint.MyPaintsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20dp"
+        android:layout_marginVertical="@dimen/_100dp"
+        android:paddingBottom="@dimen/_20dp"
+        android:background="@drawable/my_paint_bg_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cvContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/swiss_coffee_bg_rounded"
+            android:padding="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvContainerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/restful_retreat"
+                android:textSize="@dimen/_20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvContainerCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tb_62"
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvContainerName"
+                app:layout_constraintTop_toBottomOf="@id/tvContainerName" />
+
+            <TextView
+                android:id="@+id/tvContainerPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_8dp"
+                android:text="@string/paint_amount"
+                android:textSize="@dimen/_32sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvContainerCode"
+                app:layout_constraintTop_toBottomOf="@id/tvContainerCode"
+                tools:text="₹ 55.00"/>
+
+            <TextView
+                android:id="@+id/tvContainerApproxLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_8dp"
+                android:text="@string/approximate"
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/tvContainerPrice"
+                app:layout_constraintTop_toTopOf="@id/tvContainerPrice" />
+
+            <TextView
+                android:id="@+id/tvContainerPriceEachLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_8dp"
+                android:text="@string/price_each"
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvContainerApproxLabel"
+                app:layout_constraintTop_toBottomOf="@id/tvContainerApproxLabel" />
+
+            <TextView
+                android:id="@+id/tvContainerCoverageLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_8dp"
+                android:text="@string/coverage"
+                android:textSize="@dimen/_12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvContainerApproxLabel" />
+
+            <TextView
+                android:id="@+id/tvContainerCoverageValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_8dp"
+                android:text="@string/coverage_dummy_value"
+                android:textSize="@dimen/_12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvContainerCoverageLabel" />
+
+            <ImageView
+                android:id="@+id/ivArt"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="@dimen/_16dp"
+                android:background="@drawable/ic_launcher_foreground"
+                app:layout_constraintBottom_toTopOf="@id/cvContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cvContainer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--Sheen-->
+
+        <TextView
+            android:id="@+id/tvSheenlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16dp"
+            android:text="@string/sheen"
+            android:textColor="@color/atomic_tangerine"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/cvContainer"
+            app:layout_constraintTop_toBottomOf="@+id/cvContainer" />
+
+        <RadioGroup
+            android:id="@+id/rgSheen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sp"
+            android:layout_marginVertical="@dimen/_16dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSheenlabel">
+
+            <RadioButton
+                android:id="@+id/rbSheen1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@drawable/custom_sheen"
+                android:text="@string/matte"
+                android:checked="true"
+                android:textColor="@color/atomic_tangerine" />
+
+            <RadioButton
+                android:id="@+id/rbSheen2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@drawable/custom_sheen"
+                android:text="@string/eggshell"
+                android:textColor="@color/atomic_tangerine" />
+
+            <RadioButton
+                android:id="@+id/rbSheen3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@drawable/custom_sheen"
+                android:text="@string/satin"
+                android:textColor="@color/atomic_tangerine" />
+        </RadioGroup>
+
+        <!--Container Size-->
+
+        <TextView
+            android:id="@+id/tvContainerSizeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_16dp"
+            android:text="@string/container_size"
+            android:textColor="@color/atomic_tangerine"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvSheenlabel"
+            app:layout_constraintTop_toBottomOf="@+id/rgSheen" />
+
+        <RadioGroup
+            android:id="@+id/rgContainerSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_32sp"
+            android:layout_marginVertical="@dimen/_16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvContainerSizeLabel">
+
+            <RadioButton
+                android:id="@+id/rbContainerSize1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@drawable/custom_sheen"
+                android:text="@string/_1_gallon"
+                android:textColor="@color/atomic_tangerine" />
+
+            <RadioButton
+                android:id="@+id/rbContainerSize2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@drawable/custom_sheen"
+                android:text="@string/_8_fl_oz"
+                android:textColor="@color/atomic_tangerine" />
+
+        </RadioGroup>
+
+        <!--Quantity-->
+
+        <TextView
+            android:id="@+id/tvQuantityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_16dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/quantity"
+            android:textColor="@color/atomic_tangerine"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvContainerSizeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/rgContainerSize"
+            />
+
+        <LinearLayout
+            android:id="@+id/llQuantity"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="@dimen/_32sp"
+            android:layout_marginVertical="@dimen/_16dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvQuantityLabel">
+
+            <Button
+                android:id="@+id/btnDecrement"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:text="-"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/etQuantity"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="1"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btnIncrement"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:text="+"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
