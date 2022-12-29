@@ -134,10 +134,9 @@
             android:id="@+id/rgSheen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_20sp"
+            android:layout_marginHorizontal="@dimen/_20dp"
             android:layout_marginVertical="@dimen/_16dp"
             android:orientation="horizontal"
-            android:padding="@dimen/_8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvSheenlabel">
@@ -148,8 +147,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/matte"
-                android:textColor="@color/atomic_tangerine"
+                android:background="@drawable/custom_sheen_matte"
                 android:textStyle="bold" />
 
             <View
@@ -162,8 +160,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/eggshell"
-                android:textColor="@color/atomic_tangerine"
+                android:background="@drawable/custom_sheen_eggshell"
                 android:textStyle="bold" />
 
             <View
@@ -176,10 +173,62 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/satin"
-                android:textColor="@color/atomic_tangerine"
+                android:background="@drawable/custom_sheen_satin"
                 android:textStyle="bold" />
         </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/llSheenText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/rgSheen"
+            app:layout_constraintStart_toStartOf="@id/rgSheen"
+            app:layout_constraintTop_toBottomOf="@id/rgSheen">
+
+            <TextView
+                android:id="@+id/tvSheenMatte"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/matte"
+                android:textColor="@color/atomic_tangerine"
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/rgSheen"
+                app:layout_constraintTop_toBottomOf="@+id/rgSheen" />
+
+            <TextView
+                android:id="@+id/tvSheenEggshell"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/eggshell"
+                android:textColor="@color/atomic_tangerine"
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tvSheenMatte"
+                app:layout_constraintTop_toBottomOf="@+id/rgSheen" />
+
+            <TextView
+                android:id="@+id/tvSheenSatin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/satin"
+                android:textColor="@color/atomic_tangerine"
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/rgSheen"
+                app:layout_constraintStart_toEndOf="@+id/tvSheenEggshell"
+                app:layout_constraintTop_toBottomOf="@+id/rgSheen" />
+
+        </LinearLayout>
 
         <!--Container Size-->
 
@@ -192,8 +241,8 @@
             android:textColor="@color/atomic_tangerine"
             android:textSize="@dimen/_16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/tvSheenlabel"
-            app:layout_constraintTop_toBottomOf="@+id/rgSheen" />
+            app:layout_constraintStart_toStartOf="@+id/llSheenText"
+            app:layout_constraintTop_toBottomOf="@+id/llSheenText" />
 
         <RadioGroup
             android:id="@+id/rgContainerSize"
@@ -212,8 +261,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/_1_gallon"
-                android:textColor="@drawable/custom_text_selector"
+                android:background="@drawable/custom_sheen_matte"
                 android:textStyle="bold" />
 
             <View
@@ -226,11 +274,49 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/_8_fl_oz"
-                android:textColor="@drawable/custom_text_selector"
+                android:background="@drawable/custom_sheen_eggshell"
                 android:textStyle="bold" />
 
         </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/llContainerSizeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/rgContainerSize"
+            app:layout_constraintStart_toStartOf="@id/rgContainerSize"
+            app:layout_constraintTop_toBottomOf="@id/rgContainerSize">
+
+            <TextView
+                android:id="@+id/tvContainerSizeOneGallon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/matte"
+                android:textColor="@color/atomic_tangerine"
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/rgSheen"
+                app:layout_constraintTop_toBottomOf="@+id/rgSheen" />
+
+            <TextView
+                android:id="@+id/tvContainerSizeEightFlOz"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/eggshell"
+                android:textColor="@color/atomic_tangerine"
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tvSheenMatte"
+                app:layout_constraintTop_toBottomOf="@+id/rgSheen" />
+
+        </LinearLayout>
 
         <!--Quantity-->
 
@@ -244,10 +330,10 @@
             android:textColor="@color/atomic_tangerine"
             android:textSize="@dimen/_16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/tvContainerSizeLabel"
-            app:layout_constraintTop_toBottomOf="@+id/rgContainerSize" />
+            app:layout_constraintStart_toStartOf="@+id/llContainerSizeText"
+            app:layout_constraintTop_toBottomOf="@+id/llContainerSizeText" />
 
-        <LinearLayout
+        <!--<LinearLayout
             android:id="@+id/llQuantity"
             android:layout_width="130dp"
             android:layout_height="40dp"
@@ -282,6 +368,73 @@
                 android:padding="0dp"
                 android:text="+"
                 android:textSize="25sp" />
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/llQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginHorizontal="@dimen/_32dp"
+            android:layout_marginVertical="@dimen/_20dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvQuantityLabel">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnDecrement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/swiss_coffee"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/swiss_coffee"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_down_arrow" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/etQuantity"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnIncrement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/swiss_coffee"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/swiss_coffee"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/ic_up_arrow" />
+
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

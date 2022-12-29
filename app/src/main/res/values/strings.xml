@@ -18,9 +18,9 @@
     <string name="coverage_dummy_value">400 sq.ft per gallon</string>
 
     <string name="sheen">Sheen</string>
-    <string name="matte">Dummy Matte</string>
-    <string name="eggshell">Dummy EggShell</string>
-    <string name="satin">Dummy Satin</string>
+    <string name="matte">Matte</string>
+    <string name="eggshell">EggShell</string>
+    <string name="satin">Satin</string>
 
     <string name="container_size">Container Size</string>
     <string name="_1_gallon">Dummy 1 Gallon</string>

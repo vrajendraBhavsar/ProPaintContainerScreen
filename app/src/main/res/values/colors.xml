@@ -11,4 +11,9 @@
     <color name="swiss_coffee">#d0dbd0</color>
     <color name="atomic_tangerine">#f3be9e</color>
     <color name="acid_green">#2a6187</color>
+
+    <color name="dark_grey_matte">#5C5E60</color>
+    <color name="dark_grey_eggshell">#6B6E70</color>
+    <color name="dark_grey_satin">#A4A4A4</color>
+
 </resources>

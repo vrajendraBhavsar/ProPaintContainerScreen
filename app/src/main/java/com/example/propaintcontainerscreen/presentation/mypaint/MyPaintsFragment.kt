@@ -16,7 +16,7 @@ import com.example.propaintcontainerscreen.databinding.FragmentMyPaintsBinding
 class MyPaintsFragment : Fragment() {
 
     private var _binding: FragmentMyPaintsBinding? = null
-    private var itemQuantity: Int = 1
+    private var itemQuantity: Int = 0
     private var containerAmount: Int = 0
 
     private val myPaintsViewModel by lazy {
@@ -53,6 +53,7 @@ class MyPaintsFragment : Fragment() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -66,14 +67,14 @@ class MyPaintsFragment : Fragment() {
             containerAmount
         )
         //Sheen
-        binding.rbSheen1.text = containerData[0].colors[0].sheen[0].name
-        binding.rbSheen2.text = containerData[0].colors[0].sheen[1].name
-        binding.rbSheen3.text = containerData[0].colors[0].sheen[2].name
+        binding.tvSheenMatte.text = containerData[0].colors[0].sheen[0].name
+        binding.tvSheenEggshell.text = containerData[0].colors[0].sheen[1].name
+        binding.tvSheenSatin.text = containerData[0].colors[0].sheen[2].name
         //Container size
-        binding.rbContainerSize1.text = containerData[0].colors[0].size
-        binding.rbContainerSize2.text = containerData[0].colors[1].size
+        binding.tvContainerSizeOneGallon.text = containerData[0].colors[0].size
+        binding.tvContainerSizeEightFlOz.text = containerData[0].colors[1].size
 
-        binding.rgContainerSize.setOnCheckedChangeListener { group, checkedId ->
+        binding.rgContainerSize.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 R.id.rbContainerSize1 -> {
                     binding.tvContainerPrice.text = resources.getString(
@@ -81,6 +82,7 @@ class MyPaintsFragment : Fragment() {
                         containerData[0].colors[0].amount
                     )
                     binding.rgSheen.visibility = View.VISIBLE
+                    binding.llSheenText.visibility = View.VISIBLE
                     containerAmount = containerData[0].colors[0].amount
                     itemQuantity = 1
                     binding.etQuantity.text = itemQuantity.toString()
@@ -92,6 +94,7 @@ class MyPaintsFragment : Fragment() {
                         containerData[0].colors[1].amount
                     )
                     binding.rgSheen.visibility = View.INVISIBLE
+                    binding.llSheenText.visibility = View.INVISIBLE
                     containerAmount = containerData[0].colors[1].amount
                     itemQuantity = 1
                     binding.etQuantity.text = itemQuantity.toString()
