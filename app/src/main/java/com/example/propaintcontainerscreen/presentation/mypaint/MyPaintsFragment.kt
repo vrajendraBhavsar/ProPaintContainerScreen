@@ -1,6 +1,8 @@
 package com.example.propaintcontainerscreen.presentation.mypaint
 
+import android.content.Context
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.propaintcontainerscreen.R
 import com.example.propaintcontainerscreen.databinding.FragmentMyPaintsBinding
+import com.google.android.material.internal.ViewUtils.dpToPx
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -41,16 +44,6 @@ class MyPaintsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
-        binding.ivArt.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "${myPaintsViewModel.getContainerData(requireContext())}",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
     }
 
     @Deprecated("Deprecated in Java")
@@ -63,6 +56,10 @@ class MyPaintsFragment : Fragment() {
         //price
 //        containerAmount = containerData[0].colors[0].amount
         binding.tvContainerPrice.text = resources.getString(
+            R.string.paint_amount,
+            containerAmount
+        )
+        binding.tvFinalTotal.text = resources.getString(
             R.string.paint_amount,
             containerAmount
         )
@@ -81,15 +78,26 @@ class MyPaintsFragment : Fragment() {
                         R.string.paint_amount,
                         containerData[0].colors[0].amount
                     )
+                    binding.tvFinalTotal.text = resources.getString(
+                        R.string.paint_amount,
+                        containerData[0].colors[0].amount
+                    )
                     binding.rgSheen.visibility = View.VISIBLE
                     binding.llSheenText.visibility = View.VISIBLE
                     containerAmount = containerData[0].colors[0].amount
                     itemQuantity = 1
                     binding.etQuantity.text = itemQuantity.toString()
+                    binding.ivArt.layoutParams.height = 80.toPx(requireContext())
+                    binding.ivArt.layoutParams.width = 80.toPx(requireContext())
+                    binding.ivArt.requestLayout()
                 }
 
                 R.id.rbContainerSize2 -> {
                     binding.tvContainerPrice.text = resources.getString(
+                        R.string.paint_amount,
+                        containerData[0].colors[1].amount
+                    )
+                    binding.tvFinalTotal.text = resources.getString(
                         R.string.paint_amount,
                         containerData[0].colors[1].amount
                     )
@@ -98,6 +106,9 @@ class MyPaintsFragment : Fragment() {
                     containerAmount = containerData[0].colors[1].amount
                     itemQuantity = 1
                     binding.etQuantity.text = itemQuantity.toString()
+                    binding.ivArt.layoutParams.height = 60.toPx(requireContext())
+                    binding.ivArt.layoutParams.width = 60.toPx(requireContext())
+                    binding.ivArt.requestLayout()
                 }
             }
         }
@@ -106,7 +117,7 @@ class MyPaintsFragment : Fragment() {
             if (itemQuantity > 0) {
                 itemQuantity += 1
                 binding.etQuantity.text = itemQuantity.toString()
-                binding.tvContainerPrice.text = resources.getString(
+                binding.tvFinalTotal.text = resources.getString(
                     R.string.paint_amount,
                     itemQuantity * containerAmount
                 )
@@ -117,7 +128,7 @@ class MyPaintsFragment : Fragment() {
             itemQuantity -= 1
             if (itemQuantity > 0) {
                 binding.etQuantity.text = itemQuantity.toString()
-                binding.tvContainerPrice.text = resources.getString(
+                binding.tvFinalTotal.text = resources.getString(
                     R.string.paint_amount,
                     itemQuantity * containerAmount
                 )
@@ -129,4 +140,7 @@ class MyPaintsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    fun Int.toPx(context: Context) = this * context.resources.displayMetrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT
+
 }

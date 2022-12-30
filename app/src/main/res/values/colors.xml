@@ -7,13 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="dark_grey">#b4b1b4</color>
+    <color name="light_grey">#E4E4E4</color>
     <color name="white">#FFFFFFFF</color>
     <color name="swiss_coffee">#d0dbd0</color>
     <color name="atomic_tangerine">#f3be9e</color>
-    <color name="acid_green">#2a6187</color>
+<!--    <color name="acid_green">#2a6187</color>-->
+    <color name="acid_green">#468AB8</color>
 
     <color name="dark_grey_matte">#5C5E60</color>
     <color name="dark_grey_eggshell">#6B6E70</color>
     <color name="dark_grey_satin">#A4A4A4</color>
+    <color name="kelly_green">#4CBB17</color>
 
 </resources>

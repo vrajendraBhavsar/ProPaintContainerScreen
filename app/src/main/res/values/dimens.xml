@@ -3,10 +3,14 @@
     <dimen name="_5dp">5dp</dimen>
     <dimen name="_8dp">8dp</dimen>
     <dimen name="_16dp">16dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+    <dimen name="_18dp">18dp</dimen>
     <dimen name="_20dp">20dp</dimen>
     <dimen name="_24dp">24dp</dimen>
     <dimen name="_32dp">32dp</dimen>
     <dimen name="_100dp">100dp</dimen>
+    <dimen name="_200dp">200dp</dimen>
+    <dimen name="_250dp">250dp</dimen>
 
     <dimen name="_8sp">8sp</dimen>
     <dimen name="_10sp">10sp</dimen>

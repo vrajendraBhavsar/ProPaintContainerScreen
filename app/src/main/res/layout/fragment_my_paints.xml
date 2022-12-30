@@ -6,14 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".presentation.mypaint.MyPaintsFragment">
 
+    <ImageView
+        android:id="@+id/ivArt"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginRight="@dimen/_16dp"
+        android:background="@drawable/paint_bucket"
+        android:elevation="@dimen/_5dp"
+        app:layout_constraintBottom_toTopOf="@+id/clMainContainer"
+        app:layout_constraintEnd_toEndOf="@+id/clMainContainer"
+        app:layout_constraintTop_toTopOf="@+id/clMainContainer" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMainContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_20dp"
         android:layout_marginVertical="@dimen/_100dp"
         android:background="@drawable/my_paint_bg_rounded"
         android:paddingBottom="@dimen/_20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/clCheckoutSection"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -104,7 +116,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvContainerCoverageLabel" />
 
-            <ImageView
+            <!--<ImageView
                 android:id="@+id/ivArt"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
@@ -112,7 +124,7 @@
                 android:background="@drawable/ic_launcher_foreground"
                 app:layout_constraintBottom_toTopOf="@id/cvContainer"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/cvContainer" />
+                app:layout_constraintTop_toTopOf="@id/cvContainer" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -333,43 +345,6 @@
             app:layout_constraintStart_toStartOf="@+id/llContainerSizeText"
             app:layout_constraintTop_toBottomOf="@+id/llContainerSizeText" />
 
-        <!--<LinearLayout
-            android:id="@+id/llQuantity"
-            android:layout_width="130dp"
-            android:layout_height="40dp"
-            android:layout_marginHorizontal="@dimen/_32sp"
-            android:layout_marginVertical="@dimen/_16dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvQuantityLabel">
-
-            <Button
-                android:id="@+id/btnDecrement"
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:padding="0dp"
-                android:text="-"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/etQuantity"
-                android:layout_width="70dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:inputType="number"
-                android:text="1"
-                android:textColor="@android:color/black" />
-
-            <Button
-                android:id="@+id/btnIncrement"
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:padding="0dp"
-                android:text="+"
-                android:textSize="25sp" />
-        </LinearLayout>-->
-
         <LinearLayout
             android:id="@+id/llQuantity"
             android:layout_width="wrap_content"
@@ -377,52 +352,49 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginHorizontal="@dimen/_32dp"
-            android:layout_marginVertical="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_12dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvQuantityLabel">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:id="@+id/btnDecrement"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@color/swiss_coffee"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:background="@drawable/pill_button_left_curve"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
                 app:cardBackgroundColor="@color/swiss_coffee"
-                app:cardCornerRadius="5dp"
                 app:cardElevation="3dp">
 
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_margin="4dp"
-                    android:src="@drawable/ic_down_arrow" />
+                    android:src="@drawable/ic_subtract" />
 
-
-            </androidx.cardview.widget.CardView>
-
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/etQuantity"
                 style="@style/TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="5dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/texilines"
+                android:paddingHorizontal="@dimen/_18dp"
                 android:text="0"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
 
-
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:id="@+id/btnIncrement"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@color/swiss_coffee"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:background="@drawable/pill_button_right_curve"
                 android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
                 app:cardBackgroundColor="@color/swiss_coffee"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="3dp">
@@ -430,12 +402,92 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
+                    android:layout_gravity="center"
                     android:layout_margin="4dp"
-                    android:src="@drawable/ic_up_arrow" />
+                    android:src="@drawable/ic_add" />
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
         </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCheckoutSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvTotalLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_24dp"
+            android:layout_marginStart="4dp"
+            android:text="@string/total"
+            android:textColor="@color/atomic_tangerine"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnCheckout"
+            app:layout_constraintEnd_toEndOf="@+id/btnCheckout"
+            app:layout_constraintHorizontal_bias="0.419"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.516" />
+
+        <TextView
+            android:id="@+id/tvFinalTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_8dp"
+            android:text="@string/paint_amount"
+            android:textColor="@color/atomic_tangerine"
+            android:textSize="@dimen/_32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tvTotalLabel"
+            app:layout_constraintStart_toEndOf="@id/tvTotalLabel"
+            app:layout_constraintTop_toTopOf="@id/tvTotalLabel"
+            tools:text="₹ 55.00" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCheckout"
+            android:layout_width="@dimen/_250dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_16dp"
+            android:background="@drawable/pill_button"
+            android:gravity="center"
+            android:text="@string/checkout"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_16sp"
+            app:cardElevation="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!--<LinearLayout
+            android:id="@+id/btnCheckout"
+            android:layout_width="@dimen/_200dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/pill_button"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/_16dp"
+            app:cardElevation="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="4dp"
+                android:text="@string/checkout" />
+
+        </LinearLayout>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
